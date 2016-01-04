@@ -15,3 +15,9 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+*.php	 diff=astextplain
+*.css	 diff=astextplain
+*.js	 diff=astextplain
+*.txt	 diff=astextplain
+*.htm	 diff=astextplain
+*.html	 diff=astextplain
