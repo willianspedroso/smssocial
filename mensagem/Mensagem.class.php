@@ -318,7 +318,7 @@ class Mensagem {
 					AND c.id = gc.contato_id
 					AND gc.grupo_id = g.id
 					AND g.instituicao_id = i.id
-					AND g.instituicao_id = $instituicao[0";
+					AND g.instituicao_id = $instituicao[0]";
 
 		//executa a query dos dados
 		$rs = $wpdb->get_results($query);

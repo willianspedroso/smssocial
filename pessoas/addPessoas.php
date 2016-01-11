@@ -101,12 +101,12 @@ $grupos = implode(',', $jsonGrupo);
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">
 							<label>Nome</label>
-							<input type="text" name="pessoas[nome]" value="<?php echo $pes["nome"]; ?>" placeholder="Nome da Pessoa" class="form-control">
+							<input type="text" name="pessoas[nome]" id="nome" value="<?php echo $pes["nome"]; ?>" placeholder="Nome da Pessoa" class="form-control">
 						</div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">
 							<label>Celular</label>
-							<input type="text" name="pessoas[celular]" value="<?php echo $pes["celular"]; ?>" placeholder="DDI(55) + DDD + Celular da Pessoa" class="form-control">
+							<input type="text" name="pessoas[celular]" id="celular" value="<?php echo $pes["celular"]; ?>" placeholder="DDI(55) + DDD + Celular da Pessoa" class="form-control">
 						</div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">
@@ -115,8 +115,8 @@ $grupos = implode(',', $jsonGrupo);
 						</div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-12">
-							<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=pessoas" class="btn btn-default">Voltar</a>&nbsp;
-							<button class="btn  btn-primary" type="submit">Salvar</button>
+							<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=pessoas" class="btn btn-default">Voltar</a>&nbsp;							
+							<button class="btn  btn-primary" id="salvar" type="button">Salvar</button>
 						</div>
 					</form>
        			</div><!-- /.box-header -->
@@ -231,6 +231,26 @@ $(function() {
 
 	} //fim verificacao se precisa popular o grupo
 
+
+	$("#salvar").on("click",function(){
+		if($("#nome").val() != "" && $("#celular").val() != "") {
+			if($(".grupoid").val()) {
+				$("#form").submit();
+			} else {
+				alert("Favor incluir um grupo!");
+			}
+		} else {
+			if($("#nome").val() == "") {
+				alert("Favor incluir um nome!");
+			}
+
+			if($("#celular").val() == "") {
+				alert("Favor incluir um celular!");
+			}
+		}
+
+		return false;			
+	});
 
 });
 

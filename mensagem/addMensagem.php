@@ -82,8 +82,8 @@ $queryContato = "	SELECT cont.id, cont.nome, cont.celular
 					INNER JOIN {$table_prefix}smssocial_grupo grp on gcont.grupo_id = grp.id
 					WHERE cont.flg_atv = 1
 						AND grp.instituicao_id = $instituicao[0]
+					GROUP BY cont.nome
 					ORDER BY cont.nome;";
-
 $rsContato  = $wpdb->get_results( $queryContato );
 
 //autocomplete
@@ -234,7 +234,7 @@ $categorias = implode(',', $jsonCat);
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-12">
 							<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=mensagem" class="btn btn-default">Voltar</a>&nbsp;
-							<button class="btn  btn-primary" id="enviar" type="button">Enviar Msg.</button>							
+							<button class="btn  btn-primary" id="enviar" type="button">Enviar Msg.</button>
 						</div>
 					</form>
        			</div><!-- /.box-header -->
