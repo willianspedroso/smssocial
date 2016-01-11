@@ -21,7 +21,7 @@ if($current_user->ID > 0) {
 
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <!--<li class="header"> MENU </li>-->
+        <li class="header"> MENU </li>
         <?php
         if($perfilSms[0] == 1 && array_key_exists("administrator", $perfil[0])) {
         ?>
@@ -46,7 +46,7 @@ if($current_user->ID > 0) {
         </li>
         
         <li class="treeview <?php if($ctr == "pessoas" || $ctr == "grupos") echo 'active'; ?>">
-          <a style="background:#1F292E;" href="#">
+          <a href="#">
             <i class="fa fa-male"></i><span>Contatos</span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
@@ -57,7 +57,7 @@ if($current_user->ID > 0) {
         </li>
 
         <li class="treeview <?php if($ctr == "relatorio") echo 'active'; ?> ">
-          <a style="background:#182024;" href="#">
+          <a href="#">
             <i class="fa fa-bar-chart"></i><span>Relatórios</span><i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">

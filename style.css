@@ -1,19 +1,17 @@
 /*
 Theme Name: SMS Social
-Theme URI: http://smssocial.com/exemplo/
+Theme URI: http://smssocial.gi.fic.ufg.br/
 Description: Um Template WordPress otimizado para envio e recebimento de sms.
 Author: Equipe SMS Social
-Author URI: http://www.smssocial.com/
+Author URI: http://smssocial.gi.fic.ufg.br/
 Version: 1.0
-Tags: sms, social, sms_social, smssocial, comunidade
+Tags: sms, social, sms_social, smssocial, comunidade, enviar, receber, responder, resposivo, Zenvia
 Your theme can be your copyrighted work.
 Like WordPress, this work is released under GNU General Public License, version 2 (GPL).
  
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
-/*@import url('styles/rebuild.css');
-@import url('styles/reset.css');
-@import url('styles/wp.css');*/
+
 /*<!-- Bootstrap 3.3.4 -->*/
 @import url('styles/bootstrap/css/bootstrap.min.css');
 /*<!-- DATA TABLES -->*/

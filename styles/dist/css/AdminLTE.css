@@ -324,7 +324,7 @@ a:focus {
   border-radius: 2px;
 }
 .content-header > .breadcrumb > li > a {
-  color: #444;
+  color: #000;
   text-decoration: none;
   display: inline-block;
 }

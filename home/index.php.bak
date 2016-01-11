@@ -5,6 +5,19 @@
 
 <!-- Main content -->
 <section class="content">
+	<!--
+  	<div class="row">
+    	<div class="col-xs-12">
+	      	<div class="box">
+	        	<div class="box-header">
+					<center>
+						<img src="<?php bloginfo('stylesheet_directory'); ?>/imagens/smsSocial.png" width="250px" title="SMSSocial">
+					</center>
+	        	</div>
+	      	</div>
+ 		</div>
+  	</div>
+  	-->
   	<div class="row">
     	<div class="col-xs-4">
 	      	<div class="box">
