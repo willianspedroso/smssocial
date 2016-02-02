@@ -7,7 +7,7 @@ $rq = $_REQUEST["instituicao"];
 $where = "";
 //verifica se existe valor para ser pesquisado
 if(!empty($rq["instituicao"])) {
-  $where .= ' AND instituicao = '.$rq["instituicao"];
+  $where .= ' AND instituicao LIKE "%'.$rq["instituicao"].'%"';
 }
 
 //query para busca os dados na basededados

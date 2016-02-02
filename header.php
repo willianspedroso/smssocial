@@ -53,6 +53,8 @@
     
     <!-- Demo -->
     <script src="<?php bloginfo('template_url'); ?>/js/demo.js" type="text/javascript"></script>
+    <!-- Validate -->
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.validate.js" type="text/javascript"></script>
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
@@ -101,9 +103,7 @@
               </li>
               <!-- Tasks: style can be found in dropdown.less -->
               <li class="dropdown tasks-menu">
-                <a href="<?php home_url(); ?>?topo=ajuda" target="blank" class="dropdown-toggle" data-toggle="dropdown" title="Ajuda">
-                  <i class="fa fa-flag-o"></i>
-                </a>
+                <a href="<?php home_url(); ?>?topo=ajuda" target="blank" title="Ajuda"><i class="fa fa-flag-o"></i></a>
               </li>
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">

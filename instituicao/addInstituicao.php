@@ -33,7 +33,7 @@ if(!empty($id)) {
 
 						<div class="col-md-6">
 							<label> Descrição da instituicao </label>
-							<input type="text" name="instituicao[instituicao]" value="<?php echo $inst->instituicao; ?>" placeholder="Descrição do instituicao" class="form-control">
+							<input type="text" name="instituicao[instituicao]" value="<?php echo $inst->instituicao; ?>" placeholder="Descrição do instituicao" class="form-control required">
 						</div>
 
 						<div class="col-md-12">&nbsp;</div>
@@ -48,3 +48,8 @@ if(!empty($id)) {
 		</div>
 	</div>
 </section>
+<script>
+$().ready(function() {
+  $('#form').validate({});
+});
+</script>

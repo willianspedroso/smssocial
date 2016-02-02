@@ -10,8 +10,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt" href="<?php bloginfo('template_url'); ?>/controller.php?ctr=mensagem&mt=addMensagem"><i class="fa fa-comment-o"></i></a><br>
-        			<span style="font-size:10pt">Nova Mensagem</span>
+        			<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=mensagem&mt=addMensagem"><i class="fa fa-comment-o"></i></a><br>
+        			<span>Nova Mensagem</span>
         			</center>
 	        	</div>
 	        </div>
@@ -20,8 +20,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt;" href="<?php bloginfo('template_url'); ?>/controller.php?ctr=respostaMsg"><i class="fa fa-inbox"></i></a><br>
-        			<span style="font-size:10pt">Mensagens Recebidas</span>
+        			<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=respostaMsg"><i class="fa fa-inbox"></i></a><br>
+        			<span>Mensagens Recebidas</span>
         			</center>
 	        	</div>
 	        </div>
@@ -30,8 +30,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt" href="<?php bloginfo('template_url'); ?>/controller.php?ctr=pessoas&mt=addPessoas"><i class="fa fa-user"></i></a><br>
-        			<span style="font-size:10pt">Cadastrar Pessoas</span>
+        			<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=pessoas&mt=addPessoas"><i class="fa fa-user"></i></a><br>
+        			<span>Cadastrar Pessoas</span>
         			</center>
 	        	</div>
 	        </div>
@@ -42,8 +42,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt" href="#"><i class="fa fa-play-circle-o"></i></a><br>
-        			<span style="font-size:10pt">V&iacute;deo Tutorial</span>
+        			<a href="#"><i class="fa fa-play-circle-o"></i></a><br>
+        			<span>V&iacute;deo Tutorial</span>
         			</center>
 	        	</div>
 	        </div>
@@ -52,8 +52,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt;" href="#"><i class="fa fa-book"></i></a><br>
-        			<span style="font-size:10pt">Manual do Usu&aacute;rio</span>
+        			<a href="#"><i class="fa fa-book"></i></a><br>
+        			<span>Manual do Usu&aacute;rio</span>
         			</center>
 	        	</div>
 	        </div>
@@ -62,8 +62,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:45pt" href="#"><i class="fa fa-question"></i></a><br>
-        			<span style="font-size:10pt">D&uacute;vidas Frequentes</span>
+        			<a href="#"><i class="fa fa-dollar"></i></a><br>
+        			<span>Relatório de Cr&eacute;ditos</span>
         			</center>
 	        	</div>
 	        </div>
@@ -74,8 +74,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:85pt" href="<?php bloginfo('template_url'); ?>/controller.php?ctr=relatorio&mt=relatorioMsgEnviada" title="Mensagem Enviada" ><i class="fa fa-bar-chart"></i></a><br>
-        			<span style="font-size:10pt">Relatório de Mensagens Enviadas</span>
+        			<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=relatorio&mt=relatorioMsgEnviada" title="Mensagem Enviada" ><i class="fa fa-bar-chart"></i></a><br>
+        			<span>Relatório de Mensagens Enviadas</span>
         			</center>
 	        	</div>
 	        </div>
@@ -84,8 +84,8 @@
 	      	<div class="box">
 	        	<div class="box-body">
 	        		<center>
-        			<a style="font-size:85pt" href="<?php bloginfo('template_url'); ?>/controller.php?ctr=relatorio&mt=relatorioMsgRecebida" title="Mensagem Recebida" ><i class="fa fa-line-chart"></i></a><br>
-        			<span style="font-size:10pt">Relatório de Mensagens Recebidas</span>
+        			<a href="<?php bloginfo('template_url'); ?>/controller.php?ctr=relatorio&mt=relatorioMsgRecebida" title="Mensagem Recebida" ><i class="fa fa-line-chart"></i></a><br>
+        			<span>Relatório de Mensagens Recebidas</span>
         			</center>
 	        	</div>
 	        </div>

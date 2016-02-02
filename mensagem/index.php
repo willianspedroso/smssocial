@@ -50,7 +50,7 @@ $query = "SELECT p.ID as id,  p.post_content as mensagem,
             AND gcont.contato_id = cont.id
             AND gcont.grupo_id = grp.id
             AND p.ID = meta.post_id
-            AND (p.post_type='msg_enviada' OR p.post_type='msg_cancelada')
+            AND (p.post_type IN ('msg_enviada','msg_cancelada','msg_respondida'))
             AND (meta.meta_key = 'gateway_id' AND meta.meta_value = 1)
             AND cont.flg_atv = 1 AND grp.flg_atv = 1
             AND grp.instituicao_id = $instituicao[0]

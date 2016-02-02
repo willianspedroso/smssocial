@@ -46,7 +46,7 @@ $rsIns = $wpdb->get_results("SELECT * FROM {$table_prefix}smssocial_instituicao 
 
 						<div class="col-md-6">
 							<label>Instituição</label>
-							<select name="grupo[instituicao_id]" id="instituicao_id" class="form-control">
+							<select name="grupo[instituicao_id]" id="instituicao_id" class="form-control required">
 								<option value=""> Selecione a Instituição </option>
 								<?php
 								$option = "";
@@ -66,7 +66,7 @@ $rsIns = $wpdb->get_results("SELECT * FROM {$table_prefix}smssocial_instituicao 
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">
 							<label> Descrição do Grupo </label>
-							<input type="text" name="grupo[grupo]" value="<?php echo $grp->grupo; ?>" placeholder="Descrição do Grupo" class="form-control">
+							<input type="text" name="grupo[grupo]" value="<?php echo $grp->grupo; ?>" placeholder="Descrição do Grupo" class="form-control required">
 						</div>						
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-12">
@@ -79,3 +79,8 @@ $rsIns = $wpdb->get_results("SELECT * FROM {$table_prefix}smssocial_instituicao 
 		</div>
 	</div>
 </section>
+<script>
+$().ready(function() {
+  $('#form').validate({});
+});
+</script>

@@ -98,6 +98,10 @@ class Grupos {
 
 		//executa a alteracao
 		if($wpdb->update("{$table_prefix}smssocial_grupo", $grp, $where)) {
+
+			//retira os relacionamentos dos contatos
+			$wpdb->delete('{$table_prefix}smssocial_grupo_contato', array( 'grupo_id' => $id ));
+
 			$_SESSION["msgOk"] = "Grupo deletado com sucesso!";
 		} else {
 			$_SESSION["msgErro"] = "Erro ao deletar o Grupo!";

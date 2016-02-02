@@ -15,24 +15,24 @@
     <form name="form" id="form" action="<?php bloginfo('template_url'); ?>/login/actions.php?mt=fale_conosco" method="post" >
       <div class="col-xs-12">
         <label> Nome </label>
-        <input type="text" name="nome" value="" placeholder="Nome" class="form-control">
+        <input type="text" name="nome" value="" placeholder="Nome" class="form-control required">
       </div>
       <div class="col-xs-12">&nbsp;</div>
 
       <div class="col-xs-6">
         <label> Email </label>
-        <input type="text" name="email" value="" placeholder="Email" class="form-control">
+        <input type="text" name="email" value="" placeholder="Email" class="form-control required">
       </div>
 
       <div class="col-xs-6">
         <label> Telefone </label>
-        <input type="text" name="telefone" value="" placeholder="Telefone" class="form-control">
+        <input type="text" name="telefone" value="" placeholder="Telefone" class="form-control required">
       </div>
       <div class="col-xs-12">&nbsp;</div>
 
       <div class="col-xs-12">
         <label> Texto </label>
-        <textarea rows="2" cols="50" name="texto" class="form-control"></textarea>
+        <textarea rows="2" cols="50" name="texto" class="form-control required"></textarea>
       </div>
       <div class="col-xs-12">&nbsp;</div>
       <div class="row">
@@ -43,3 +43,8 @@
     </form>
   </div><!-- /.login-box-body -->
 </div><!-- /.fale-box -->
+<script>
+$().ready(function() {
+  $('#form').validate({});
+});
+</script>

@@ -105,7 +105,7 @@ if($_REQUEST["tp"] == "delete") {
 	$queryContato = "SELECT cont.id
 					FROM {$table_prefix}smssocial_contato cont
 					INNER JOIN {$table_prefix}smssocial_grupo_contato grc ON cont.id = grc.contato_id 
-					WHERE 1 = 1 {$whereGrp} {$whereContato};";
+					WHERE cont.flg_atv = 1 AND grc.flg_atv = 1 {$whereGrp} {$whereContato};";
 	//print $queryContato;
 	$contatos = $wpdb->get_results( $queryContato );
 	
