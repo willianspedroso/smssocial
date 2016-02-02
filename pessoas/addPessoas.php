@@ -106,7 +106,7 @@ $grupos = implode(',', $jsonGrupo);
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">
 							<label>Celular</label>
-							<input type="text" name="pessoas[celular]" id="celular" value="<?php echo $pes["celular"]; ?>" placeholder="DDI(55) + DDD + Celular da Pessoa" class="form-control required">
+							<input type="text" name="pessoas[celular]" id="celular" value="<?php echo $pes["celular"]; ?>" placeholder="DDI(55) + DDD + Celular da Pessoa" class="form-control required" alt="celular">
 						</div>
 						<div class="col-md-12">&nbsp;</div>
 						<div class="col-md-6">

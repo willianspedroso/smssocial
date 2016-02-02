@@ -55,6 +55,9 @@
     <script src="<?php bloginfo('template_url'); ?>/js/demo.js" type="text/javascript"></script>
     <!-- Validate -->
     <script src="<?php bloginfo('template_url'); ?>/js/jquery.validate.js" type="text/javascript"></script>
+    <!-- Mascaras -->
+    <script src="<?php bloginfo('template_url'); ?>/js/jquery.meiomask.1.14.js" type="text/javascript"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/mask.js" type="text/javascript"></script>
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	<?php wp_head(); ?>
