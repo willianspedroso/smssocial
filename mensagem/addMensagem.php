@@ -148,15 +148,14 @@ $categorias = implode(',', $jsonCat);
 
 						<input type="hidden" name="tp" id="tp" value="">
 						
-						<div id="tabs" class="col-md-12"> 
+						<div id="tabs" class="col-md-6" style="margin:15px;">
 							<ul> 
 								<li><a href="#grupos">Grupos</a></li> 
 								<li><a href="#contatos">Contatos</a></li>
 							</ul> 
 							<div id="grupos"> <!-- ABA GRUPOS-->
-								<div class="col-md-12">
-
-									<div class="col-md-6">
+								<div class="col-md-12" style="padding:0px">
+									<div  class="col-md-10">
 										<div class="typeahead-container">
 								            <div class="typeahead-field">
 									            <span class="typeahead-query">
@@ -165,7 +164,7 @@ $categorias = implode(',', $jsonCat);
 								            </div>
 								        </div>
 								    </div>
-								    <div class="col-md-3">
+								    <div class="col-md-2">
 							        	<button id="addGrupo" class="btn  btn-primary" type="button" > Add </button>
 							        </div>
 							        <div class="col-md-12">
@@ -174,8 +173,8 @@ $categorias = implode(',', $jsonCat);
 					            </div>
 							</div> 
 							<div id="contatos"> <!-- ABA CONTATOS-->
-								<div class="col-md-12">
-									<div class="col-md-6">
+								<div class="col-md-12" style="padding:0px">
+									<div class="col-md-10">
 										<div class="typeahead-container">
 								            <div class="typeahead-field">
 									            <span class="typeahead-query">
@@ -184,7 +183,7 @@ $categorias = implode(',', $jsonCat);
 								            </div>
 								        </div>
 								    </div>
-								    <div class="col-md-3">
+								    <div class="col-md-2">
 							        	<button id="addContato" class="btn  btn-primary" type="button" > Add </button>
 							        </div>
 							        <div class="col-md-12">
@@ -194,8 +193,10 @@ $categorias = implode(',', $jsonCat);
 							</div>
 						</div>
 						<div class="col-md-12">&nbsp;</div>
-						<div class="col-md-6">
+						<div class="col-md-12">
 							<label>Categoria</label>
+						</div>
+						<div class="col-md-5">
 							<div class="typeahead-container">
 					            <div class="typeahead-field">
 						            <span class="typeahead-query">
@@ -204,7 +205,7 @@ $categorias = implode(',', $jsonCat);
 					            </div>
 					        </div>
 					    </div>
-					    <div class="col-md-3">					    	
+					    <div class="col-md-1">					    	
 				        	<button id="addCategoria" class="btn  btn-primary" type="button" > Add </button>
 				        </div>
 				        <div class="col-md-12">

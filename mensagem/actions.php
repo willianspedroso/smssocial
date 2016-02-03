@@ -102,10 +102,10 @@ if($_REQUEST["tp"] == "delete") {
 	}
 
 	//query para pegar os contatos que seram gravados
-	$queryContato = "SELECT cont.id
+	$queryContato = "SELECT DISTINCT cont.id
 					FROM {$table_prefix}smssocial_contato cont
 					INNER JOIN {$table_prefix}smssocial_grupo_contato grc ON cont.id = grc.contato_id 
-					WHERE cont.flg_atv = 1 AND grc.flg_atv = 1 {$whereGrp} {$whereContato};";
+					WHERE cont.flg_atv = 1 {$whereGrp} {$whereContato};";
 	//print $queryContato;
 	$contatos = $wpdb->get_results( $queryContato );
 	

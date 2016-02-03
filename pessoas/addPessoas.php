@@ -86,7 +86,7 @@ $grupos = implode(',', $jsonGrupo);
 								<div class="typeahead-container">
 						            <div class="typeahead-field">
 							            <span class="typeahead-query">
-											<input type="text" class="form-control required" name="grupoAutoComplete" id="grupoAutoComplete" type="search" autocomplete="off">
+											<input type="text" class="form-control" name="grupoAutoComplete" id="grupoAutoComplete" type="search" autocomplete="off">
 										</span>
 						            </div>
 						        </div>
