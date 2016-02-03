@@ -24,18 +24,21 @@ class Grupos {
 		$grp["grupo"] 			= $grupo["grupo"];		
 		$grp["instituicao_id"] 	= $grupo["instituicao_id"];
 		$grp["id_usuario_wp"] 	= $grupo["id_usuario_wp"];
-		
-		//executa a insercao
-		if($wpdb->insert("{$table_prefix}smssocial_grupo", $grp)) {
-			$_SESSION["msgOk"] = "Grupo incluido com sucesso!";
 
-			//return o valor inserido
-			return  $wpdb->insert_id;
-		} else {
-			$_SESSION["msgErro"] = "Erro ao inserir um novo Grupo!";
+		//verifica se existe o registro
+		if($this->getRegistro($grupo)) {
+			//executa a insercao
+			if($wpdb->insert("{$table_prefix}smssocial_grupo", $grp)) {
+				$_SESSION["msgOk"] = "Grupo incluido com sucesso!";
 
-			return false;
-		} // fim verificacao
+				//return o valor inserido
+				return  $wpdb->insert_id;
+			} else {
+				$_SESSION["msgErro"] = "Erro ao inserir um novo Grupo!";
+
+				return false;
+			} // fim verificacao
+		}
 		
 	} // fim insertGrupo
 
@@ -59,21 +62,25 @@ class Grupos {
 		$grp["id_usuario_wp"] 	= $grupo["id_usuario_wp"];
 		$grp["dt_cadastro"] 	= date('Y-m-d H:i:s');
 
-		//valor
-		$where  = array('id'=>$grupo["id"]);
+		//verifica se existe o registro
+		if($this->getRegistro($grupo)) {
 
-		//executa a alteracao
-		if($wpdb->update("{$table_prefix}smssocial_grupo", $grp, $where)) {
-			$_SESSION["msgOk"] = "Grupo alterado com sucesso!";
+			//valor
+			$where  = array('id'=>$grupo["id"]);
 
-			//retorna o valor do id do post
-			return $grupo["id"];
-		} else {
-			$_SESSION["msgErro"] = "Erro ao alterar do Grupo!";
+			//executa a alteracao
+			if($wpdb->update("{$table_prefix}smssocial_grupo", $grp, $where)) {
+				$_SESSION["msgOk"] = "Grupo alterado com sucesso!";
 
-			//retorna como falso
-			return false;
-		} // fim verificacao
+				//retorna o valor do id do post
+				return $grupo["id"];
+			} else {
+				$_SESSION["msgErro"] = "Erro ao alterar do Grupo!";
+
+				//retorna como falso
+				return false;
+			} // fim verificacao
+		}
 
 	} // fim updateGrupo
 
@@ -108,6 +115,31 @@ class Grupos {
 		} // fim verificacao	
 		
 	} // fim deleteInstituicao
+
+	/**
+	 * Metodo para verificar se existe o registro na tabela antes de gravar
+	 * 
+	 */
+	 private function getRegistro($grupo) {
+	 	//variaveis globais
+		global $wpdb, $table_prefix;
+		
+	 	//verifica se já existe o grupo para aquela instituição
+		$vGrupo = $wpdb->get_row("	SELECT * 
+									FROM {$table_prefix}smssocial_grupo grp
+									WHERE grp.grupo = '{$grupo['grupo']}' 
+										AND grp.instituicao_id = {$grupo['instituicao_id']}");
+
+		//verifica se o grupo existe
+		if(!empty($vGrupo)) {
+			$_SESSION["msgErro"] = "Este grupo para está instituição já existe!";
+
+			return false;
+		}//fim vGrupo
+
+		return true;
+
+	 } //fim getRegistro
 
 } //fim class Grupos
 ?>

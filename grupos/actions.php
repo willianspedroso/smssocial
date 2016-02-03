@@ -32,6 +32,7 @@ if($_REQUEST["tp"] == "delete") {
 		$Grupos->insertGrupo($grupo);
 		
 	} //fim verificacao do valor 
+
 }
 //para direcionar
 $_SESSION["ctr"] = "grupos";

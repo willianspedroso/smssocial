@@ -26,22 +26,25 @@ class Instituicao {
 		//insert colunas e valores		
 		$inst["instituicao"] 	= $instituicao["instituicao"];
 		$inst["id_usuario_wp"] 	= $instituicao["id_usuario_wp"];
-	
-		//executa a insercao
-		if($wpdb->insert("{$table_prefix}smssocial_instituicao", $inst)) {
-			
-			$_SESSION["msgOk"] = "Instituição incluida com sucesso!";
-
-			//return o valor inserido
-			return  $wpdb->insert_id;
-
-		} else {
-			
-			$_SESSION["msgErro"] = "Erro ao inserir um novo instituição!";
-
-			return false;
-		} // fim verificacao
 		
+		//verifica se existe o registro
+		if($this->getRegistro($instituicao)) {
+			//executa a insercao
+			if($wpdb->insert("{$table_prefix}smssocial_instituicao", $inst)) {
+				
+				$_SESSION["msgOk"] = "Instituição incluida com sucesso!";
+
+				//return o valor inserido
+				return  $wpdb->insert_id;
+
+			} else {
+				
+				$_SESSION["msgErro"] = "Erro ao inserir um novo instituição!";
+
+				return false;
+			} // fim verificacao
+		}
+
 	} // fim insertInstituicao
 
 	/**
@@ -60,19 +63,23 @@ class Instituicao {
 		$inst["id_usuario_wp"] 	= $instituicao["id_usuario_wp"];
 		$inst["dt_cadastro"] 	= date('Y-m-d H:i:s');
 
-		//valor
-		$where  = array('id'=>$instituicao["id"]);
+		//verifica se existe o registro
+		if($this->getRegistro($instituicao)) {
 
-		//executa a alteracao
-		if($wpdb->update("{$table_prefix}smssocial_instituicao", $inst, $where)) {
-			$_SESSION["msgOk"] = "Instituição alterada com sucesso!";
-			//retorna o valor do id do post
-			return $instituicao["id"];
-		} else {
-			$_SESSION["msgErro"] = "Erro ao alterar do instituição!";
-			//retorna como falso
-			return false;
-		} // fim verificacao
+			//valor
+			$where  = array('id'=>$instituicao["id"]);
+
+			//executa a alteracao
+			if($wpdb->update("{$table_prefix}smssocial_instituicao", $inst, $where)) {
+				$_SESSION["msgOk"] = "Instituição alterada com sucesso!";
+				//retorna o valor do id do post
+				return $instituicao["id"];
+			} else {
+				$_SESSION["msgErro"] = "Erro ao alterar do instituição!";
+				//retorna como falso
+				return false;
+			} // fim verificacao
+		}
 
 	} // fim updateInstituicao
 
@@ -102,6 +109,30 @@ class Instituicao {
 		} // fim verificacao
 		
 	} // fim deleteInstituicao
+
+	/**
+	 * Metodo para verificar se existe o registro na tabela antes de gravar
+	 * 
+	 */
+	 private function getRegistro($instituicao) {
+	 	//variaveis globais
+		global $wpdb, $table_prefix;
+		
+	 	//verifica se já existe o grupo para aquela instituição
+		$vInstituicao = $wpdb->get_row("SELECT * 
+										FROM {$table_prefix}smssocial_instituicao
+										WHERE instituicao = '{$instituicao['instituicao']}'");
+
+		//verifica se o grupo existe
+		if(!empty($vInstituicao)) {
+			$_SESSION["msgErro"] = "Esta instituição já existe!";
+
+			return false;
+		}//fim vGrupo
+
+		return true;
+
+	 } //fim getRegistro
 
 } //fim class instituicao
 ?>
